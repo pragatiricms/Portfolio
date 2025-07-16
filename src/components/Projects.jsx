@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useCallback } from "react";
 import groceryAppImage from "../assets/grocery.png";
 import figmaDesignImage from "../assets/figma.png";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Tilt from "react-parallax-tilt";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "tsparticles-slim";
 
 const projects = [
   {
@@ -22,14 +24,49 @@ const projects = [
 ];
 
 const Projects = () => {
+  const particlesInit = useCallback(async (engine) => {
+    await loadSlim(engine);
+  }, []);
+
   return (
     <div
-      className="relative min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-20 px-4 sm:px-6 md:px-12 lg:px-24"
+      className="relative min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-20 px-4 sm:px-6 md:px-12 lg:px-24 overflow-hidden"
       id="project"
     >
-      {/* Blurred background bubbles */}
+      {/* Particle Background */}
+      <Particles
+        id="tsparticles-projects"
+        init={particlesInit}
+        className="absolute inset-0 -z-10 pointer-events-none"
+        options={{
+          fullScreen: { enable: false },
+          background: { color: "transparent" },
+          particles: {
+            number: { value: 40 },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: { value: 0.15 },
+            size: { value: { min: 1, max: 3 } },
+            links: {
+              enable: true,
+              distance: 100,
+              color: "#ffffff",
+              opacity: 0.2,
+              width: 1,
+            },
+            move: {
+              enable: true,
+              speed: 0.5,
+              direction: "none",
+              outMode: "bounce",
+            },
+          },
+        }}
+      />
+
+      {/* Glowing Bubbles */}
       <div className="absolute top-16 left-[-30px] w-48 h-48 sm:w-60 sm:h-60 bg-purple-600 opacity-20 rounded-full blur-3xl animate-pulse -z-10"></div>
-      <div className="absolute bottom-8 right-[-30px] w-48 h-48 sm:w-60 sm:h-60 bg-teal-400 opacity-20 rounded-full blur-3xl animate-pulse -z-10"></div>
+      <div className="absolute bottom-8 right-[-30px] w-48 h-48 sm:w-60 sm:h-60 bg-teal-400 opacity-20 rounded-full blur-3xl animate-ping -z-10"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14 bg-gradient-to-r from-teal-400 to-purple-400 text-transparent bg-clip-text">

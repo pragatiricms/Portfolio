@@ -17,7 +17,7 @@ const Hero = () => {
       <Particles
         id="tsparticles"
         init={particlesInit}
-        className="absolute inset-0 -z-10 pointer-events-none" // 🔥 IMPORTANT!
+        className="absolute inset-0 -z-10 pointer-events-none"
         options={{
           fullScreen: { enable: false },
           background: { color: "transparent" },
@@ -37,7 +37,7 @@ const Hero = () => {
       <div className="absolute bottom-[-4rem] right-[-3rem] w-72 h-72 bg-cyan-500 opacity-20 rounded-full blur-3xl animate-ping -z-10"></div>
 
       {/* Content */}
-      <div className="flex flex-col md:flex-row items-center justify-between w-full gap-12">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full gap-12">
         {/* Image */}
         <div className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
           <img

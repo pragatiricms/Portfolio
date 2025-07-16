@@ -8,9 +8,8 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Footer from "./components/Footer";
 import Contact from "./components/Contact";
-
+import Footer from "./components/Footer";
 
 const App = () => {
   useEffect(() => {
@@ -18,13 +17,20 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-sans bg-black text-white">
+    <div className="font-sans bg-black text-white overflow-x-hidden w-screen min-h-screen">
+      {/* Sticky navbar on top */}
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects/>
-      <Contact/>
+
+      {/* All sections in full width, no padding */}
+      <main className="w-full">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

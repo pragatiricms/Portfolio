@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,9 +10,17 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-white/10 shadow-md border-b border-teal-500/20 px-4 sm:px-6 md:px-16 lg:px-24">
       <div className="max-w-7xl mx-auto py-4 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">
-          Pragati
-        </div>
+
+<motion.div
+  className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+>
+  Pragati
+</motion.div>
+
+
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">

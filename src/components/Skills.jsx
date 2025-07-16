@@ -54,7 +54,7 @@ const Skills = () => {
   return (
     <div
       className="relative overflow-hidden bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-white py-20 px-4 sm:px-6 md:px-16 lg:px-24"
-      id="service"
+      id="skills"
     >
       {/* Floating decorative elements */}
       <div className="absolute top-16 left-[-10%] w-56 h-56 sm:w-72 sm:h-72 bg-teal-500 opacity-20 rounded-full blur-3xl animate-pulse -z-10"></div>
