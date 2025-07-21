@@ -15,7 +15,7 @@ const projects = [
       "Team Project completed within 4–5 days. Built a Blinkit-inspired grocery shopping platform with real-time cart, localStorage support, and responsive UI.",
     image: groceryAppImage,
     url: "https://qlith-blikint-clone.vercel.app/",
-    codeUrl: "https://github.com/pragatiricms/Grocery-Blinkit-Clone",
+    codeUrl: "https://github.com/pragatiricms/GroceryGo.git",
   },
   {
     id: 2,
