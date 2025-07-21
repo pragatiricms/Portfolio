@@ -8,19 +8,16 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-white/10 shadow-md border-b border-teal-500/20 px-4 sm:px-6 md:px-16 lg:px-24">
-      <div className="max-w-7xl mx-auto py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto py-3 flex justify-between items-center">
         {/* Logo */}
-
-<motion.div
-  className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text"
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
->
-  Pragati
-</motion.div>
-
-
+        <motion.div
+          className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Pragati
+        </motion.div>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-6">
@@ -82,28 +79,29 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       <div
-        className={`md:hidden bg-[#0f0c29] px-6 py-6 space-y-4 transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden bg-[#0f0c29] px-6 ${
+          isMenuOpen ? "max-h-[350px] py-4" : "max-h-0 py-0"
         }`}
       >
-        {navItems.map((item) => (
+        <div className="space-y-4">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item}`}
+              className="block text-white text-base font-medium hover:text-cyan-400 transition"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.charAt(0).toUpperCase() + item.slice(1)}
+            </a>
+          ))}
           <a
-            key={item}
-            href={`#${item}`}
-            className="block text-white text-base font-medium hover:text-cyan-400 transition"
+            href="#contact"
+            className="block w-full text-center mt-2 bg-gradient-to-r from-cyan-400 to-sky-500 text-white px-5 py-2 rounded-full shadow-md hover:brightness-110 transition"
             onClick={() => setIsMenuOpen(false)}
           >
-            {item.charAt(0).toUpperCase() + item.slice(1)}
+            Connect Me
           </a>
-        ))}
-
-        <a
-          href="#contact"
-          className="block w-full text-center mt-2 bg-gradient-to-r from-cyan-400 to-sky-500 text-white px-5 py-2 rounded-full shadow-md hover:brightness-110 transition"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          Connect Me
-        </a>
+        </div>
       </div>
     </nav>
   );

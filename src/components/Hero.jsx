@@ -43,7 +43,7 @@ const Hero = () => {
           <img
             src={HeroImage}
             alt="Pragati Nahak"
-            className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full object-cover shadow-lg hover:scale-105 transition-transform duration-500"
+            className="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full object-cover shadow-lg hover:scale-105 transition-transform duration-500"
           />
         </div>
 

@@ -87,7 +87,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex gap-5 text-xl justify-center">
           <a
-            href="https://github.com/pragatiricms/MERN02M002"
+            href="https://github.com/pragatiricms"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-white transition duration-300"
